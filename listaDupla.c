@@ -3,6 +3,33 @@
 #include "listaDupla.h"
 
 
+link MenorElemento(ListaDupla l){
+  int menor = l->head;
+  link t = l->head;
+  link aux;
+  while ( t != l->z ) {
+    if(t->item < menor){
+          aux = t;
+          menor = t->item;
+    }
+    t = t->next;
+  }
+  return aux;
+}
+
+void OrdenaLista(ListaDupla l){
+  link t = l->head,aux = l->head;
+  for(t = l->head; t != l->z; t = t->next) {
+    for(x = l->head->next; x != l->z->prev->next; x = x->next ){
+      if(t->item < t->next->item){
+        aux->next = t->next;
+        aux->prev = t;
+        t->next = aux;
+        aux->next->prev = t;
+      }
+    }
+  }
+}
 
 
 link novoNo (int item, link prev, link next) {
