@@ -18,7 +18,7 @@ link MenorElemento(ListaDupla l){
 }
 
 void OrdenaLista(ListaDupla l){
-  link t = l->head,aux = l->head;
+  link t = l->head,aux = l->head,x = l->head;
   for(t = l->head; t != l->z; t = t->next) {
     for(x = l->head->next; x != l->z->prev->next; x = x->next ){
       if(t->item < t->next->item){
